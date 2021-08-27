@@ -1,0 +1,268 @@
+:root {
+  --body-color: hsl(235, 21%, 11%);
+  --ul-color: hsl(235, 24%, 19%);
+  --li-color: hsl(234, 39%, 85%);
+  --small-color: hsl(236, 9%, 61%);
+  --border-bottom-color: hsl(234, 11%, 52%);
+  --background-img-url: url("../images/bg-desktop-dark.jpg");
+}
+
+.light-theme {
+  --body-color: hsl(236, 33%, 92%);
+  --ul-color: hsl(0, 0%, 98%);
+  --li-color: hsl(235, 19%, 35%);
+  --border-bottom-color: hsl(233, 11%, 84%);
+  --background-img-url: url("../images/bg-desktop-light.jpg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: var(--body-color);
+  font-family: "Josefin Sans", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: var(--background-img-url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 32.5vh;
+}
+
+.container {
+  width: 50%;
+  z-index: 111;
+}
+
+.container .drag-text {
+  color: #787882;
+  font-size: 1rem;
+  display: block;
+  text-align: center;
+  margin-top: 3em;
+}
+
+.logo-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 4em 0 3em 0;
+}
+
+.logo-div h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  letter-spacing: 12px;
+}
+
+.logo-div img {
+  cursor: pointer;
+}
+
+form {
+  position: relative;
+}
+
+form::before {
+  content: "";
+  border: 1px solid var(--border-bottom-color);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 18px;
+  top: 17px;
+  border-radius: 50%;
+}
+
+input {
+  font-family: inherit;
+  color: #cacde8;
+  background-color: var(--ul-color);
+  font-size: 18px;
+  width: 100%;
+  padding: 20px 30px 20px 60px;
+  outline: none;
+  border: none;
+  margin-bottom: 2em;
+  border-radius: 6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 38px, rgba(0, 0, 0, 0.22) 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 38px, rgba(0, 0, 0, 0.22) 0px 0px 1px;
+}
+
+input::-webkit-input-placeholder {
+  color: #9394a5;
+}
+
+input:-ms-input-placeholder {
+  color: #9394a5;
+}
+
+input::-ms-input-placeholder {
+  color: #9394a5;
+}
+
+input::placeholder {
+  color: #9394a5;
+}
+
+.todo-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 38px, rgba(0, 0, 0, 0.22) 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 38px, rgba(0, 0, 0, 0.22) 0px 0px 1px;
+  background-color: var(--ul-color);
+}
+
+.todo-div .todo-list li {
+  padding: 20px 30px 20px 60px;
+  position: relative;
+  border-bottom: 1px solid var(--border-bottom-color);
+  color: var(--li-color);
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.todo-div .todo-list li .check {
+  content: "";
+  background: url("../images/icon-check.svg");
+  background-position: center;
+  background-size: cover;
+  color: black;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 26px;
+  top: 25px;
+}
+
+.todo-div .todo-list li::after {
+  content: "";
+  border: 1px solid var(--border-bottom-color);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 18px;
+  top: 17px;
+  border-radius: 50%;
+}
+
+.todo-div .todo-list li:hover .cross {
+  display: block;
+}
+
+.todo-div .todo-list li .cross {
+  display: none;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.todo-div .todo-list .completed {
+  color: var(--border-bottom-color);
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+}
+
+.todo-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.3em;
+}
+
+.todo-filter small {
+  color: var(--small-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.todo-filter small:hover {
+  color: #e4e5f1;
+}
+
+.todo-filter #items-left {
+  cursor: default;
+}
+
+.todo-filter #items-left:hover {
+  color: #9394a5;
+}
+
+.todo-filter .small-btn {
+  margin: 0 10px;
+  font-weight: 700;
+}
+
+.todo-filter .active {
+  color: #3a7bfd;
+}
+
+@media screen and (max-width: 1080px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: 90%;
+  }
+  .container .todo-list li {
+    font-size: 18px;
+  }
+  .todo-filter small {
+    font-size: 0.7rem;
+    margin-top: auto;
+    margin-bottom: 1px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .todo-filter .small-btn {
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .todo-filter {
+    padding: 1.3em 0.7em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

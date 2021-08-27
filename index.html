@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/favicon-32x32.png" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"
+      integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>TODO | App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-div">
+        <h2>TODO</h2>
+        <div class="theme-mode-toggle">
+          <img src="images/icon-sun.svg" alt="sun" id="theme-icon" />
+        </div>
+      </div>
+      <form id="form">
+        <input
+          type="text"
+          placeholder="Create a new todo..."
+          spellcheck="false"
+          id="todo-input"
+        />
+      </form>
+      <div class="todo-div">
+        <ul class="todo-list">
+          <!-- <li class="completed">
+            <span></span>
+            Read for 1 hour
+            <img src="images/icon-cross.svg" class="cross" />
+          </li>
+          <li class="completed">
+            <span></span>
+            Read for 1 hour
+            <img src="images/icon-cross.svg" class="cross" />
+          </li>
+          <li class="completed">
+            <span></span>
+            Read for 1 hour
+            <img src="images/icon-cross.svg" class="cross" />
+          </li> -->
+        </ul>
+        <div class="todo-filter">
+          <small id="items-left">0 item left</small>
+          <div class="todo-small">
+            <small class="small-btn active" id="all">All</small>
+            <small class="small-btn" id="active">Active</small>
+            <small class="small-btn" id="completed">Completed</small>
+          </div>
+          <small id="clear">Clear Completed</small>
+        </div>
+      </div>
+      <div class="todo-btns"></div>
+
+      <small class="drag-text">Drag and drop to reorder list</small>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
